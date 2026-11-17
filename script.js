@@ -50,10 +50,10 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     function clickedCuteButton() {
       // change image to tail wag
-      $(".pet-image").attr("src", "images/tail-wag.gif"); // changing src attribute 
+      $(".pet-image").attr("src", "images/tail-wag.gif"); // changing src attribute. It changes the main image to the gif I made
 
       // add cuteness points
-      pet_info.cuteness++;
+      pet_info.cuteness++; // the cuter he gets, the happier he is, hence the tail wags
 
       checkAndUpdatePetInfoInHtml();
     }
@@ -78,7 +78,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.name').text(pet_info['name']);
       $('.weight').text(pet_info['weight']);
       $('.happiness').text(pet_info['happiness']);
-      $('.cute').text(pet_info['cute']); // updates the cuteness parameter
+      $('.cute').text(pet_info['cuteness']); // updates the cuteness parameter
     }
   
 
