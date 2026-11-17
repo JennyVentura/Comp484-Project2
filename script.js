@@ -8,7 +8,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
 
-    $('.something-button').click(clickedSomethingButton); // my new action button
+    $('.cute-button').click(clickedCuteButton); // my new action button - for something cute to happen
   
 
   
@@ -16,7 +16,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {name: "Pumpkin", weight: 12, happiness: 5};
+    var pet_info = {name: "Pumpkin", weight: 12, happiness: 5, cuteness: 50}; // I added cuteness points
 
     function clickedTreatButton() {
       // Increase pet happiness
@@ -48,10 +48,14 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       checkAndUpdatePetInfoInHtml();
     }
 
-    function clickedSomethingButton() {
-      // Do something???!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    function clickedCuteButton() {
+      // change image to tail wag
+      $(".pet-image").attr("src", "images/tail-wag.gif"); // changing src attribute 
 
-      //checkAndUpdatePetInfoInHtml(); -- needed?????????????????
+      // add cuteness points
+      pet_info.cuteness++;
+
+      checkAndUpdatePetInfoInHtml();
     }
   
     function checkAndUpdatePetInfoInHtml() {
@@ -61,10 +65,11 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     
     function checkWeightAndHappinessBeforeUpdating() {
       // Add conditional so if weight is lower than zero.
-      if(weight < 0 || happiness < 0) {
-        //???????? write out text or add?
+      if(pet_info.weight < 0 || pet_info.happiness < 0) { // I added happiness cause I assume it can't be negative?
+        pet_info.weight = 0; // set it equal to 0 because I assume it can't be neagtive. Even if it died, it would still never be negative. But for arguments sake, I put that it can go down to 0 because this is digital.
+        pet_info.happiness = 0; // if it could go below 0, then the player would have to dig themself out of that hole and I don't think they would enjoy that.
       } else {
-        updatePetInfoInHtml(); //needed???????????
+        updatePetInfoInHtml();
       }
     }
     
@@ -73,6 +78,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.name').text(pet_info['name']);
       $('.weight').text(pet_info['weight']);
       $('.happiness').text(pet_info['happiness']);
+      $('.cute').text(pet_info['cute']); // updates the cuteness parameter
     }
   
 
