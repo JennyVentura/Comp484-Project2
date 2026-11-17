@@ -18,6 +18,22 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
     var pet_info = {name: "Pumpkin", weight: 12, happiness: 5, cuteness: 50}; // I added cuteness points
 
+    function notification(message) { // Notification function to display comment from pet
+      $(".notification")
+      .css({ // Because it said visual, and this is also another use for .css() = setting new properties and values
+        'background-color': '#cdfff8',
+        'border': '2px solid #baf2ff',
+        'border-radius': '10px',
+        'padding': '10px',
+        'margin-top': '10px',
+        'font-weight': 'bold'
+      })
+      .text(message) // Takes in a message when called, this keeps same message and prints it
+      .fadeIn(100) // How long takes to show up
+      .delay(1500) // How long it stays
+      .fadeOut(300); // How long it takes to dissapear after the above is finished
+    }
+
     function clickedTreatButton() {
       // Increase pet happiness
       pet_info.happiness++;
@@ -25,7 +41,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       // Increase pet weight
       pet_info.weight++;
 
-      checkAndUpdatePetInfoInHtml();
+      checkAndUpdatePetInfoInHtml(); // Updates properties
+
+      notification("Yay! I love treats!"); // He speaks!
     }
     
     function clickedPlayButton() {
@@ -36,6 +54,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.weight--;
 
       checkAndUpdatePetInfoInHtml();
+
+      notification("Let's play!");
     }
     
     function clickedExerciseButton() {
@@ -46,6 +66,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.weight--;
 
       checkAndUpdatePetInfoInHtml();
+
+      notification("I'm tired!");
     }
 
     function clickedCuteButton() {
@@ -56,6 +78,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.cuteness++; // The cuter he gets, the happier he is, hence the tail wags. Cuteness points don't decrease, they can only increase
 
       checkAndUpdatePetInfoInHtml();
+
+      notification("Meow");
     }
   
     function checkAndUpdatePetInfoInHtml() {
@@ -69,7 +93,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         pet_info.weight = 0; // Set it equal to 0 because I assume it can't be neagtive. Even if it died, it would still never be negative. But for arguments sake, I put that it can go down to 0 because this is digital.
         pet_info.happiness = 0; // If it could go below 0, then the player would have to dig themself out of that hole and I don't think they would enjoy that.
       } else {
-        updatePetInfoInHtml();
+        updatePetInfoInHtml(); // Updates if all good, won't go below zero if not
       }
     }
     
@@ -88,6 +112,3 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
       $(".pet-image").attr("src", "images/cute.gif"); // New gif unlocked
     });
-
-
-    //Add a visual notification after each button press with a comment from your pet. For this requirement you can not use console.log() or alert().!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!???????????????
