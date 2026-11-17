@@ -18,21 +18,31 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     function clickedTreatButton() {
       // Increase pet happiness
-        // hapiness++;????????????
+      pet_info.happiness++;
+
       // Increase pet weight
-        // weight++;???????????????
+      pet_info.weight++;
+
       checkAndUpdatePetInfoInHtml();
     }
     
     function clickedPlayButton() {
       // Increase pet happiness
+      pet_info.happiness++;
+
       // Decrease pet weight
+      pet_info.weight--;
+
       checkAndUpdatePetInfoInHtml();
     }
     
     function clickedExerciseButton() {
       // Decrease pet happiness
+      pet_info.happiness--;
+
       // Decrease pet weight
+      pet_info.weight--;
+
       checkAndUpdatePetInfoInHtml();
     }
   
@@ -43,6 +53,11 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     
     function checkWeightAndHappinessBeforeUpdating() {
       // Add conditional so if weight is lower than zero.
+      if(weight < 0 || happiness < 0) {
+        //???????? write out text or add?
+      } else {
+        updatePetInfoInHtml(); //needed???????????
+      }
     }
     
     // Updates your HTML with the current values in your pet_info object
