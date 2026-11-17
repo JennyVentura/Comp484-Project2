@@ -26,7 +26,7 @@
         <div>Name: <strong><span class="name"></span></strong></div>
         <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
         <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
-        <div>Cute: <strong><span class="cute"></span> cuteness points</strong></div> <!--figure something out!!!!!!!!!!!!!!!!!!!!!!-->
+        <div>Cute: <strong><span class="cute"></span> cuteness points</strong></div> <!-- Where you can see his accumulated cuteness points -->
         <div class="button-container">
           <button class="treat-button">
             Treat
@@ -37,12 +37,25 @@
           <button class="exercise-button">
             Exercise
           </button>
-          <button class="cute-button"> <!--figure something out!!!!!!!!!!!!!!!!!!!!!!-->
+          <button class="cute-button"> <!-- The cute button to add cuteness points, and a suprise -->
             Cute
           </button>
         </div>
       </section>
     </main>
+    <footer> <!-- In footer so survey is underneath -->
+      <section class="survey"> <!-- Added a survey! This works with .change() method and .css() JQuery methods -->
+        <label for="survey">Survey for how cute he is: (Scale from 1-10)</label> <!-- Labels the survey, the text you see at top -->
+        <input 
+          type="number"
+          id="survey"
+          name="survey"
+          required
+          min="1"
+          max="10"
+          required /> <!-- No closing tag, required forces the user to write in box before hitting enter: so if they hit enter but left it blank, it won't work. Also, only numbers can go here, because that's the type I made it  -->
+      </section>
+    </footer>
 
     <!-- Your web-app is https, so your scripts need to be too -->
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
