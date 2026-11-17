@@ -1,4 +1,4 @@
-$(function() { // Makes sure that your function is called once all the DOM elements of the page are ready to be used.
+$(function() { // Makes sure that your function is called once all the DOM elements of the page are ready to be used.      /*Shorthand for $(document_.ready(function... which waits for DOM??????????????????????????*/
     
     // Called function to update the name, happiness, and weight of our pet in our HTML
     checkAndUpdatePetInfoInHtml();
@@ -15,12 +15,12 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
     var pet_info = {name:"Pumpkin", weight:"12", happiness:"5"};
-  //DOUBLE CHECK SLIDES!!!!!!!!
+//DOUBLE CHECK SLIDES!!!!!!!!
     function clickedTreatButton() {
       // Increase pet happiness
-      // hapiness++;????????????
+        // hapiness++;????????????
       // Increase pet weight
-      // weight++;???????????????
+        // weight++;???????????????
       checkAndUpdatePetInfoInHtml();
     }
     
