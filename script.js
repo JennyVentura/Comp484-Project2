@@ -51,9 +51,10 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function clickedCuteButton() {
       // change image to tail wag
       $(".pet-image").attr("src", "images/tail-wag.gif"); // changing src attribute. It changes the main image to the gif I made
-
+      //$(".pet-image").attr("src", "images/cute.gif"); // couldn't decide which one I wanted
+      
       // add cuteness points
-      pet_info.cuteness++; // the cuter he gets, the happier he is, hence the tail wags
+      pet_info.cuteness++; // the cuter he gets, the happier he is, hence the tail wags. Cuteness points don't decrease, They can only increase
 
       checkAndUpdatePetInfoInHtml();
     }
