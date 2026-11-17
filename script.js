@@ -7,6 +7,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
+
+    $('.something-button').click(clickedSomethingButton); // my new action button
   
 
   
@@ -45,6 +47,12 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
       checkAndUpdatePetInfoInHtml();
     }
+
+    function clickedSomethingButton() {
+      // Do something???!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+      //checkAndUpdatePetInfoInHtml(); -- needed?????????????????
+    }
   
     function checkAndUpdatePetInfoInHtml() {
       checkWeightAndHappinessBeforeUpdating();  
@@ -67,3 +75,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.happiness').text(pet_info['happiness']);
     }
   
+
+
+
+    //Add a visual notification after each button press with a comment from your pet. For this requirement you can not use console.log() or alert().!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!???????????????
+// do we use pet image class????????????
+    // two unique methods = .css() and .change()
